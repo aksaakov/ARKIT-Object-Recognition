@@ -1,6 +1,5 @@
 //
 //  ViewController.swift
-//  FlowerShop
 //
 //  Created by Brian Advent on 14.06.18.
 //  Copyright © 2018 Brian Advent. All rights reserved.
@@ -37,7 +36,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         
         // Object Detection
-        configuration.detectionObjects = ARReferenceObject.referenceObjects(inGroupNamed: "FlowerObjects", bundle: Bundle.main)!
+        configuration.detectionObjects = ARReferenceObject.referenceObjects(inGroupNamed: "ObjectReferences", bundle: Bundle.main)!
 
         // Run the view's session
         sceneView.session.run(configuration)
