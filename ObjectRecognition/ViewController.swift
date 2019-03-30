@@ -57,7 +57,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let node = SCNNode()
         
         if let objectAnchor = anchor as? ARObjectAnchor {
-            let plane = SCNPlane(width: CGFloat(objectAnchor.referenceObject.extent.x * 0.8), height: CGFloat(objectAnchor.referenceObject.extent.y * 0.5))
+            let plane = SCNPlane(width: CGFloat(objectAnchor.referenceObject.extent.x * 0.5), height: CGFloat(objectAnchor.referenceObject.extent.y * 0.5))
             
             plane.cornerRadius = plane.width / 8
             
@@ -68,9 +68,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             plane.firstMaterial?.diffuse.contentsTransform = SCNMatrix4Translate(SCNMatrix4MakeScale(1, -1, 1), 0, 1, 0)
             
             let planeNode = SCNNode(geometry: plane)
-            planeNode.position = SCNVector3Make(objectAnchor.referenceObject.center.x, objectAnchor.referenceObject.center.y + 0.35, objectAnchor.referenceObject.center.z)
+            planeNode.position = SCNVector3Make(objectAnchor.referenceObject.center.x, objectAnchor.referenceObject.center.y + 0.100, objectAnchor.referenceObject.center.z)
             
             node.addChildNode(planeNode)
+            
             
         }
         
